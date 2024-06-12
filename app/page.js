@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Hero from "./_components/Hero";
 
 export default function Home() {
   return (
-    <div>Let's start by the name of All</div>
+    <div>
+      <Hero />
+    </div>
   );
 }
