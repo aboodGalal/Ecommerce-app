@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 function ProductDetails({prams}) {
     useEffect(() =>{
-        getProductId_()
+        // getProductId_()
     },[])
     const getProductId_ = () =>{
         ProdcutsApies.getProductId().then(res =>{
