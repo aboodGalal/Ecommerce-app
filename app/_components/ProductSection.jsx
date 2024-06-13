@@ -17,7 +17,10 @@ function ProductSection() {
 
   return (
     <div className={`flex flex-col justify-center gap-10`}>
-        <h1 className={``}>Our latest products</h1>
+        <div className={`w-full flex justify-between items-center`}>
+            <h1 className={``}>Our latest products</h1>
+            <a className={`text-primary`} href="">view all collections</a>
+        </div>
         <ProductList productList={productList}/>
     </div>
   )
