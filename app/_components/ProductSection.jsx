@@ -16,7 +16,8 @@ function ProductSection() {
     }
 
   return (
-    <div>
+    <div className={`flex flex-col justify-center gap-10`}>
+        <h1 className={``}>Our latest products</h1>
         <ProductList productList={productList}/>
     </div>
   )
