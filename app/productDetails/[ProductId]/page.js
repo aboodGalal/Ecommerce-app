@@ -1,19 +1,32 @@
 'use client'
 import Breadcrumb from '@/app/_components/Breadcrumb'
+import ProductList from '@/app/_components/ProductList'
 import ProdcutsApies from '@/app/_utils/ProdcutsApies'
 import React, { useEffect, useState } from 'react'
 
 function ProductDetails({ params }) {
   const id = params?.productID
   const [productData, setProductData] = useState()
+  const [productList, setProductList] = useState([])
+
   useEffect(() => {
     getProductId_()
-    console.log(id)
+    // console.log(id)
   }, [])
+
   const getProductId_ = () => {
     ProdcutsApies.getProductId(id).then(res => {
       console.log(res.data.data)
       setProductData(res.data.data)
+      getProductsByCategory_(res.data.data)
+    })
+  }
+
+
+  const getProductsByCategory_ = (product) => {
+    ProdcutsApies.getProuductsByCtegory(product?.attributes?.category).then(res => {
+      console.log(res.data.data)
+      setProductList(res.data.data)
     })
   }
   return (
@@ -31,6 +44,7 @@ function ProductDetails({ params }) {
           <button className={`w-fit bg-primary p-2 text-white rounded-md font-thin text-[14px]`}>Add to cart</button>
         </div>
       </div>
+      <ProductList productList={productList} sameProductId={Number(id)}/>
     </div>
   )
 }

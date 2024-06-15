@@ -3,7 +3,7 @@ import React from 'react'
 
 function ProductItem({item}) {
   return (
-    <Link href={`productDetails/${item?.id}`}  className={`flex flex-col rounded-lg hover:border border-teal-500 hover:cursor-pointer gap-3
+    <Link href={`/productDetails/${item?.id}`}  className={`flex flex-col rounded-lg hover:border border-teal-500 hover:cursor-pointer gap-3
     shadow-md`}>
         <img className={`h-[150px] object-cover rounded-t-lg`} 
         src={item?.attributes?.image?.data?.attributes?.url} alt="image-card" property='image-card'/>
